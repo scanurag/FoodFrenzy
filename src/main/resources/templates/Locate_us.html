@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>TEA : LOCATION</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" href="" th:href="@{/css/Locate_us.css}" />
+	<style>
+		.icons{
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+	<center>
+		<h1 style="color: orangered; ">Our Location</h1>
+		<small style="color: red;font-weight: bold;">Internet required..</small>
+	</center>
+	<div class="location">
+<section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.2587642448775!2d77.69820641413502!3d12.955286818742959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13afc62813f9%3A0xdcf1837520b28dfa!2sJSpiders%20Marathahalli!5e0!3m2!1sen!2sin!4v1674150882329!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="contact-icon fas fa-home"></i>
+                    <span>
+                        <h5>761/1, 3rd Floor, Outer Ring Rd, next to Chaitanya Techno School, near KLM Mall, Marathahalli, Bengaluru, Karnataka 560037</h5>
+                        <p>Bengaluru, India</p>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="contact-icon fas fa-phone"></i>
+                    <span>
+                        <h5>+917234020314</h5>
+                        <p>Monday to Saturday, 10AM to 8PM</p>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="contact-icon fas fa-envelope"></i>
+                    <span>
+                        <h5>scanurag@gmail.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter email address" required>
+                    <input type="text" name="subject" placeholder="Enter subject" required>
+                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="visit-btn red-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4 style="text-align: center;">About Us</h4>
+        <p style="text-align: center;">
+        ”Explore our wide range of products designed to enhance your life."
+        </p>
+            <p style="text-align: center;">© Copyright 2019 FoodFrenzy</pstyle="text-align: center;">
+        </div>
+    </section>
+</body>
+
+</html>

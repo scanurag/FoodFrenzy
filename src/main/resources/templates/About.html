@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>TEA : ABOUT</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" href="" th:href="@{/css/About.css}" />
+		<style>
+		body{
+			background-image: url("https://cdn.acodez.in/wp-content/uploads/2015/09/banner.jpg"); 
+			 background-size: cover; 
+        
+    
+		}
+	</style>
+</head>
+<body>
+	<nav th:replace="~{Navigation::navbar()}">	
+	</nav>
+	<div class="information">
+		<h3>Repacked & Packed By :</h3>
+		<h1>FoodFrenzy</h1>
+		<h4>RSN : XXX/1,E Ward,Xyz Mil,</h4>
+		<h4>Near Royal English School</h4>
+		<h4>Deoria,India.</h4>
+		
+	</div>
+	<div class="icons">
+		<h3><i class="fa-brands fa-square-instagram" style="color: white;"></i> :0.2anurag</h3>
+		<h3><i class="fa-solid fa-phone" style="color:white"></i> : +91-7234020314</h3>
+		<h3> <i class="fa-solid fa-envelope" style="color:white"></i>  : scanurag@gmail.com</h3>
+		
+	</div>
+</body>
+</html>

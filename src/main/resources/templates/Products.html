@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>TEA : PRODUCTS</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" href="" th:href="@{css/Products.css}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{
+	padding: 0;
+	margin: 0;
+	box-shadow: border-box;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+}
+.menu-item a{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 8px 30px;
+	margin: 12px 0;
+	color: rgb(128, 129, 129);
+	font-weight: 300;
+}
+.menu-item a:hover{
+	background: rgb(250, 212, 218);
+	}
+
+#header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+	background: whitesmoke;
+	z-index: 1;
+}
+::-webkit-scrollbar{
+	display: none;
+
+}
+
+
+.add-box i{
+	font-size: 20px;
+}
+.util i,.user i{
+	font-size: 18px;
+	margin: 0 16px;
+	border: 1px solid crimson;
+	padding: 8px 16px;
+	color: crimson;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.util i:hover, .user i:hover{
+	color: white;
+	background: crimson;
+}
+.food-items{
+	
+	
+}
+#biryani,#chicken,#chinese,#north-india-food,#paneer,#vegetable{
+margin-top: 144px;
+}
+#paneer #item-card,#vegetable #item-card{
+	background: rgb(218, 253, 188);
+}
+#chinese #item-card,#north-india-food #item-card{
+	background:  #E3F9A6;
+}
+#category-name,.item-menu{
+	margin: 10px;
+	font-size: 35px;
+	color: coral;
+}
+#item-card{
+	width: 242px;
+	height: 322px;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	border-radius: 5px;
+	background: #95B9C7;
+	cursor: pointer;
+	transition: 0.5s all ease-in-out;
+}
+#card-top{
+	display: flex;
+	margin: 5px 0;
+	justify-content: space-between;
+}
+#rating{
+	padding: 7px;
+	color: goldenrod;
+	background: black;
+	font-size: 14px;
+	border-radius: 14px;
+}
+#ab{
+    padding: 6px;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px;
+    }
+.toggle-heart{
+	background: red;
+	color: white;
+}
+#item-card img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: auto;
+	display: block;
+	margin-bottom: 15px;
+	transition: 0.3s LL ease-in-out;
+}
+#item-card img:hover{
+ transform: scale(1.3);
+}
+#item-name{
+	margin: 5px 0;
+	font-weight: 600;
+	color: darkslategray;
+	font-size: 18px;
+}
+#item-price{
+	margin: 0;
+	color: rgb(2, 27, 27);
+	font-weight: 500;
+	font-size: 18px;
+}
+#cart{
+	background: whitesmoke;
+	padding-right: 30px;
+	overflow-y: scroll;
+}
+.taste-header{
+	padding: 40px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+	background: whitesmoke;
+}
+.item-menu{
+ 	margin: 0;
+ 	font-size: 30px;
+ 	margin-top: 40px;
+ 	color: indianred;
+ 	background: whitesmoke;
+}
+.border{
+	width: 80px;
+	height: 4px;
+	margin: 3px 0;
+	margin-bottom: 30px;
+	border-radius: 2px;
+	background: coral;
+}
+.list-card{
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: 0.3 all ease-in-out;
+}
+.list-card:hover{
+background: rgb(255, 216, 222);
+}
+.list-card img:hover{ 
+	transition: 0.5s all ease-in-out;
+	transform: scale(1.2);
+}
+.list-card img{
+	margin-left:5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.list-name{
+	font-size: 20px;
+	margin: 0 10px;
+	text-decoration: none;
+	text-transform: capitalize;
+	color: rgb(94, 43, 43);
+}
+.cart-toggle{
+display: none;
+}
+#cart-page{
+	background: white;
+	margin: 40px 10px;
+	margin-right: 50px;
+	padding: 20px 30px;
+	padding-bottom: 30px;
+	position: revert;
+}
+#cart-title{
+	font-size: 35px;
+	margin: 0;
+	color: indianred;
+}
+#cart-page table{
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+#cart-page table thead td{
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+#m-total-amount{
+	display: none;
+}
+#cart-page table thead td{
+	padding: 10px 0;
+	font-size: 20px;
+}
+#cart-page table tbody button{
+	outline: none;
+	border: none;
+	font-size: 16px;
+	background: lightcoral;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	margin: 0 5px;
+	padding:3px 8px;
+
+}
+#cart-page table tbody img{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+}
+#checkout{
+	text-align: center;
+	margin: 40px auto;
+	border-radius: 5px;
+	background: white;
+	padding: 10px 20px;
+}
+#checkout p{
+	margin: 15px 0;
+	float: left;
+}
+#total-price,#total-item{
+	font-size: 25px;
+	color: indianred;
+}
+.cart-btn{
+	outline: none;
+	border: none;
+	background: crimson;
+	color: white;
+	padding:10px 25px;
+	border-radius: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+	bottom: 30px;
+	margin: 15px 0;
+	cursor: pointer;
+}
+.cart-btn:hover{
+	color: crimson;
+	background: none;
+	border: 1px solid crimson;
+}
+#delievery{
+	font-size: 20px;
+	color: limegreen;
+}
+/*forlogin page*/
+body{
+ 	background-color: white;
+ 	margin: 0;
+ 	padding: 0;
+ 	background-size: cover;
+ 	background-position: center;
+ 	font-family: sans-serif;
+ }
+::placeholder{
+	color: white;
+}
+
+#item-card    a{
+	 margin-bottom: 30px;
+	
+}
+
+
+	</style>
+	
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>	
+	<section class="row1" th:each="s: ${products}">
+		
+	<!  ********************************>
+			<div id="food-items" class="food-items">
+				<!--######################################Biryani1#################################-->
+				<div id="biryani">
+					<p id="category-name">Biryani</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/Biryani_of_Hyderabadi.jpg" alt="">
+						<p id="item-name">Chicken Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs410</p>
+						<a href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--2-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4</i>
+							<i class="fa fa-heart-o add-to-cart"id="ab"></i>
+						</div>
+						<img src="./Images/biryani/Dum-Biryani.jfif" alt="">
+						<p id="item-name">Dum Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs450</p>
+						<a   href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--3-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart" id=""ab></i>
+						</div>
+						<img src="./Images/biryani/Hyderabadi-Mutton-Biryani.jfif" alt="">
+						<p id="item-name">Mutton Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs650</p>
+						<a style=" margin-bottom: 30px;"  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--4-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/Egg-biryani.jpg" alt="">
+						<p id="item-name">Egg Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs250</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--5-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/egg-dum-biryani.jpg" alt="">
+						<p id="item-name">Dum Egg Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs310</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--6-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/kolkata mutton biryani.jfif" alt="">
+						<p id="item-name">KolkataMuttonBiryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs670</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--7-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/kolkata biryani.jpg" alt="">
+						<p id="item-name">Kolkata Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs410</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--8-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/Lucknowi-biryani.jpg" alt="">
+						<p id="item-name">Lucknowi Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs410</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--9-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/biryani/veg-biryani.jpg" alt="">
+						<p id="item-name">Veg Biryani</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs300</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					
+
+					</div>
+				<!--######################################CHICKEN2#################################-->
+				<div id="chicken">
+					<p id="category-name">Chicken</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chicken/Afgani-chicken-curry.jpg" alt="">
+						<p id="item-name">Afgani Chicken</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs:410</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#######2#######-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.8</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chicken/butter-chicken.jpg" alt="">
+						<p id="item-name">Butter Chicken</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs:380</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#########3##########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.7</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chicken/chicken-karahi-kadai.jpg" alt="">
+						<p id="item-name">Chicken Kadai</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs:330</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+						<!--#######2#######-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart"id="ab"></i>
+						</div>
+						<img src="./Images/chicken/Matka-Chicken.jpg" alt="">
+						<p id="item-name">Matka Chicken</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs:510</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#########3##########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chicken/Tandoori-chicken-tikka.jpg" alt="">
+						<p id="item-name">Chicken Tikka</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs:310</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>				
+				</div>
+				<!--######################################Chinese3#################################-->
+				<div id="chinese">
+					<p id="category-name">Chinese</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chinese/chilli-Paneer.jfif" alt="">
+						<p id="item-name">Chilli-Paneer</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs210</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--###########2##########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chinese/chowmein.jpg" alt="">
+						<p id="item-name">ChowMein</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price: Rs150</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--###########3##########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.4</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chinese/Fried-rice-manchurian.jpg" alt="">
+						<p id="item-name">Fried Rice</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price: Rs210</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--###########4##########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/chinese/momo.webp" alt="">
+						<p id="item-name">Chilli-Paneer</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price: Rs210</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					
+				</div>
+				<!--######################################NorthIndia4#################################-->
+				<div id="north-india-food">
+					<p id="category-name">NorthIndia</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/Honey-Chilli-Potato.jpg" alt="">
+						<p id="item-name">Honey Chilli Potato</p>
+						<p style=" margin-bottom: 30px;"  id="item-price">Price : Rs150</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#######2########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.2</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/Gulab Jamun.jpg" alt="">
+						<p id="item-name">Gulab Jamun</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs50</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					
+					<!--#######3########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/chola-bhatura.jpg" alt="">
+						<p id="item-name">Chola Bhatura</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs180</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#######4########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.8</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/Khir.jpg" alt="">
+						<p id="item-name">Khir</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs80</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#######5########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/Soya-Chaap.jpg" alt="">
+						<p id="item-name">Soya Chaap</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs170</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--#######6########-->
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/north-india-food/Laccha-Paratha.jpg" alt="">
+						<p id="item-name">Laccha-Paratha</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs30</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+				</div>
+				<!--######################################Paneer5#################################-->
+				<div id="paneer">
+					<p id="category-name">Paneer</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.6</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/paneer/Kadai-Paneer.jpg" alt="">
+						<p id="item-name">Kadai Paneer</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs250</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--############2#############-->
+						<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3.9</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/paneer/Matar-Paneer.jpg" alt="">
+						<p id="item-name">Matar Paneer</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs230</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--############3#############-->
+						<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.9</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/paneer/paneer-butter-masala.jpg" alt="">
+						<p id="item-name">Paneer Butter masala</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs290</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					<!--############4#############-->
+						<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.4.5</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/paneer/paneer-do-pyaza.jpg" alt="">
+						<p  id="item-name">Paneer Do Pyaza</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs270</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+					
+				</div>
+				<!--######################################Vegetable6#################################-->
+				<div id="vegetable">
+					<p id="category-name">Vegetable</p>
+					<div id="item-card">
+						<div id="card-top">
+							<i class="fa fa-star" id="rating">$.3</i>
+							<i class="fa fa-heart-o add-to-cart" id="ab"></i>
+						</div>
+						<img src="./Images/vegetable/veg.jpg" alt="">
+						<p id="item-name">Veg</p>
+						<p style=" margin-bottom: 30px;" id="item-price">Price : Rs100</p>
+						<a  href="/login" id="buy" >Buy_Now</a><br />
+					</div>
+
+					
+				</div>
+				
+			</div>
+
+	<!******************************>
+	
+
+	</section>
+	<script>
+		document.getElementById("buy").addEventListener("click",function(){
+			alert("Please Login as a User to buy Products")
+		});
+	</script>
+</body>
+
+</html>

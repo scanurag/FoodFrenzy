@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>TEA : HOME</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" href="" th:href="@{css/Home.css}" />
+	<style>
+		body{
+			background-image: url("https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chan-walrus-958545.jpg&fm=jpg"); 
+			 background-size: cover; 
+        
+    
+		}
+	</style>
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+	<div class="text">
+	<h1>WELCOME TO OUR WEBSITE </h1>
+	<h3 style="color: orangered;">Where Quality Meets Innovation! <br /> Explore our wide range of products designed to enhance your life.</h3>
+	</div>
+	
+</body>
+
+</html>

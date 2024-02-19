@@ -1,0 +1,51 @@
+body
+{
+	background-image: url("https://www.thespruceeats.com/thmb/hqqNrNhIpqPqV2u0T0K-IUzUsEo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-cuisine-of-north-india-1957883-d32a933f506d43f59ac38a8eb956884a.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+*{
+	color: rgb(192, 192, 192);
+	font-weight: bold;
+}
+
+.addProducts{
+	background-color: transparent;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: 400px;
+	top: 30px;
+}
+input,textarea{
+	display: block;
+	padding: 5px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-bottom: 1px darkgreen solid;
+	font-size: 15px;
+	width: 200px;
+	color: aqua;
+	
+}
+button
+{
+	color: rgb(192, 192, 192);
+	background-color: green;
+	border: 1px black solid;
+	padding: 9px;
+	cursor: pointer;
+	position: relative;
+	left: 45px;
+	font-weight: bold;
+}
+a{
+	position: relative;
+	top: 20px;
+	border: 1px solid darkslategray;
+	padding: 10px;
+	background-color: darkslategray;
+	text-decoration: none;
+	
+}

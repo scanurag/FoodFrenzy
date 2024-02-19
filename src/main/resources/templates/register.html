@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TEA : REGISTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .RegistrationContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .registration {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+        }
+
+        .registration h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .registration label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .registration input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .registration button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .registration button:hover {
+            background-color: #45a049;
+        }
+
+        .registration p {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="RegistrationContainer">
+        <div class="registration">
+            <div class="content">
+                <h2>Register</h2>
+
+            <form th:action="@{/register}" method="get" th:object="${userRegistration}">
+				    <label for="u_id">UserID:</label>
+                    <input type="text" id="u_id" name="u_id" th:field="*{u_id}" required><br>
+                    
+                    <label for="uemail">Email:</label>
+                    <input type="email" id="uemail" name="uemail" th:field="*{uemail}" required><br>
+
+                    <label for="uname">Username:</label>
+                    <input type="text" id="uname" name="uname" th:field="*{uname}" required><br>
+
+                    <label for="unumber">Phone Number:</label>
+                    <input type="text" id="unumber" name="unumber" th:field="*{unumber}" required><br>
+
+                    <label for="upassword">Password:</label>
+                    <input type="password" id="upassword" name="upassword" th:field="*{upassword}" required><br>
+
+                    <button type="submit">Register</button>
+                </form>
+
+
+                <p th:text="${error}" style="color: red;"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
