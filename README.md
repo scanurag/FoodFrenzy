@@ -1,26 +1,44 @@
 # FoodFrenzy Web Application
 
-![Screenshot 2024-02-18 001552](https://github.com/scanurag/FoodFrenzy/assets/90509642/492cc6f4-6297-4082-9fde-51478d8e3963)
+![FoodFrenzy Screenshot](path/to/screenshot.png)
 
+FoodFrenzy is a web-based application designed to revolutionize food industry management. With its intuitive interface, it streamlines operations by seamlessly managing customer data, inventory, and orders. This comprehensive solution ensures efficient decision-making and provides accessibility from any device, enhancing productivity in the dynamic food business landscape.
 
-FoodFrenzy, a web-based application, revolutionizes food industry management. With an intuitive interface, it streamlines operations by seamlessly managing customer data, inventory, and orders. Offering comprehensive business support, it ensures efficient decision-making. FoodFrenzy is a user-centric solution, providing accessibility from any device to enhance productivity in the dynamic food business landscape.
+## Features
 
-**Feature :**
-  - Customer Management: Easily add, update, and delete customer information.
-  - Inventory Management: Keep track of your inventory items, including stock levels and pricing.
-  - Order Management: Manage customer orders such as order creation .
-  - User Authentication: Secure login and authentication for admin and staff members.
-  - Role-Based Access Control: Define roles and permissions for different user types.
-  - Thymeleaf Templates: Utilizes Thymeleaf for dynamic HTML templates.
-  - Database Integration: Integrated with MySQL for data storage.
+### Customer Management
+Easily add, update, and delete customer information. Efficiently manage your customer database to enhance customer relationships.
 
-**Technologies Used :**
--Spring Boot: Backend framework for building Java-based web applications.
--Thymeleaf: Server-side Java template engine for dynamic HTML generation.
--MySQL: Relational database management system for data storage.
--IDE/Tool : Spring Tool Suite 4 (Eclipse) 
+### Inventory Management
+Keep track of your inventory items, including stock levels and pricing. Effectively manage your stock to optimize supply chain operations.
 
-**Preview :** 
+### Order Management
+Manage customer orders with ease, including order creation, tracking, and fulfillment. Streamline your order processing for improved customer satisfaction.
+
+### User Authentication
+Implement secure login and authentication for admin and staff members. Protect sensitive information and control access to different parts of the application.
+
+### Role-Based Access Control
+Define roles and permissions for different user types. Ensure that each team member has the appropriate level of access for their responsibilities.
+
+### Thymeleaf Templates
+Utilize Thymeleaf for dynamic HTML templates. Create interactive and user-friendly web pages with server-side rendering.
+
+### Database Integration
+Integrated with MySQL for data storage. Ensure reliable and scalable data management to support your application's functionality.
+
+## Technologies Used
+
+- **Spring Boot:** Backend framework for building Java-based web applications.
+- **Thymeleaf:** Server-side Java template engine for dynamic HTML generation.
+- **MySQL:** Relational database management system for data storage.
+- **IDE/Tool:** Spring Tool Suite 4 (Eclipse)
+
+## Getting Started
+
+Include instructions on how to set up and run the application locally. Provide any necessary configuration steps, dependencies, or environment variables.
+
+## Preview
 ![Screenshot 2024-02-19 175043](https://github.com/scanurag/FoodFrenzy/assets/90509642/4cd4af1b-888a-48c1-8895-effad3f9bdea)
 
 ![Screenshot 2024-02-19 175107](https://github.com/scanurag/FoodFrenzy/assets/90509642/80819df8-ecfd-4128-987a-9d780c9f8dcd)
