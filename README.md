@@ -43,11 +43,12 @@ FoodFrenzy, a web-based application, revolutionizes food industry management. Wi
 
 ![Screenshot 2024-02-19 171344](https://github.com/scanurag/FoodFrenzy/assets/90509642/5da943c6-a09e-4bc0-a9cb-1c3956944425)
 
-![Screenshot 2024-02-19 171456](https://github.com/scanurag/FoodFrenzy/assets/90509642/9a5c467c-ce2a-4ba0-89ba-534f793aef2d)
 
-![Screenshot 2024-02-19 171758](https://github.com/scanurag/FoodFrenzy/assets/90509642/84ec04fe-161b-4a36-b014-8e6023a63114)
+![image](https://github.com/scanurag/FoodFrenzy/assets/90509642/36ddea95-0016-4078-a3f2-d3860544fe67)
 
-![Screenshot 2024-02-19 171332](https://github.com/scanurag/FoodFrenzy/assets/90509642/d5a64d46-bd48-4e36-a043-aac5107f65c4)
+
+![image](https://github.com/scanurag/FoodFrenzy/assets/90509642/018bd80d-5565-4958-9c76-fc2889a75284)
+
 
 ![Screenshot 2024-02-19 172419](https://github.com/scanurag/FoodFrenzy/assets/90509642/de8785e9-c75b-4025-a33c-926cdcc86c9b)
 
