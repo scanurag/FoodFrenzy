@@ -1,6 +1,6 @@
 # FoodFrenzy Web Application
 
-![FoodFrenzy Screenshot](path/to/screenshot.png)
+![Screenshot 2024-02-18 001552](https://github.com/scanurag/FoodFrenzy/assets/90509642/ddabdcc6-f45b-4ab8-b4a5-ca688b965c51)
 
 FoodFrenzy is a web-based application designed to revolutionize food industry management. With its intuitive interface, it streamlines operations by seamlessly managing customer data, inventory, and orders. This comprehensive solution ensures efficient decision-making and provides accessibility from any device, enhancing productivity in the dynamic food business landscape.
 
@@ -37,6 +37,8 @@ Integrated with MySQL for data storage. Ensure reliable and scalable data manage
 ## Getting Started
 
 Include instructions on how to set up and run the application locally. Provide any necessary configuration steps, dependencies, or environment variables.
+
+Clone the repository : $ git clone https://github.com/scanurag/FoodFrenzy-project.git
 
 ## Preview
 ![Screenshot 2024-02-19 175043](https://github.com/scanurag/FoodFrenzy/assets/90509642/4cd4af1b-888a-48c1-8895-effad3f9bdea)
