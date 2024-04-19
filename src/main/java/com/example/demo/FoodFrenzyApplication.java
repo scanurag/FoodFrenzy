@@ -12,4 +12,5 @@ public class FoodFrenzyApplication {
 		SpringApplication.run(FoodFrenzyApplication.class, args);
 	}
 
+
 }
