@@ -14,7 +14,7 @@ public class Exceptions
 	public String handler()
 	{
 		System.out.println("Exception Handled....!!!!");
-		System.out.println("Hey Vishnu this is your Yashwanth, Asking how you doing?");
+		System.out.println("Hey V this is your Y , Asking how you doing?");
 		return "exception";
 
 	}
