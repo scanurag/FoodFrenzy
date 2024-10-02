@@ -1,36 +1,355 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<title>TEA : ABOUT</title>
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
-	<link rel="stylesheet" href="" th:href="@{/css/About.css}" />
-		<style>
-		body{
-			background-image: url("https://cdn.acodez.in/wp-content/uploads/2015/09/banner.jpg"); 
-			 background-size: cover; 
-        
-    
-		}
-	</style>
+    <meta charset="UTF-8" />
+    <title>FoodFrenzy</title>
+    <link rel="icon" type="image/x-icon" href="./Images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/About.css}" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--<link rel="stylesheet" type="text/css" href="abc.css"> -->
+    <style type="text/css"> 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'); 
+* 
+{
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+	font-family: 'Poppins',sans-serif;
+} 
+  
+.contact 
+{
+	position: relative; 
+	min-height: 100vh; 
+	padding: 50px 100px; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	flex-direction: column; 
+	background:#222 ;
+} 
+.contact .content h2{
+	 
+	 font-size:3em; 
+	 color: #FFFFFF; 
+	 font-weight: 500; 
+
+} 
+.contact .content p 
+{
+	color: #FFFFFF; 
+	font-size: 1.1em; 
+	font-weight: 300;
+} 
+.container  
+{
+	width:100% ; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	gap: 50px;    
+	 
+	margin-top: 30px;
+} 
+.container .contactInfo 
+{
+	width: 50%; 
+	display: flex; 
+	flex-direction: column;
+} 
+.container .contactInfo .box 
+{ 
+	position: relative; 
+	padding: 20px 0; 
+	display: flex; 
+	cursor: pointer;
+
+} 
+.container .contactInfo .box .icon 
+{
+position: relative; 
+min-width: 60px; 
+height: 60px; 
+background: repeating-conic-gradient(from 27.5deg,crimson 0%,crimson 10%, transparent 10%,transparent 50%); 
+display: flex; 
+justify-content: center; 
+align-items: center;
+} 
+.container .contactInfo .box .icon::before 
+{
+	content: '';  
+	position: absolute; 
+	inset: 0;  
+	background: repeating-conic-gradient(from 117.5deg,crimson 0%,crimson 10%, transparent 10%,transparent 50%); 
+
+} 
+.container .contactInfo .box .icon::after 
+{
+	content: ''; 
+	position: absolute;  
+	inset: 2px; 
+	background: #222;
+
+} 
+.container .contactInfo .box .icon b 
+{
+	position: absolute; 
+	inset: 8px; 
+	background: crimson; 
+	z-index: 2;
+} 
+.container .contactInfo .box .icon i 
+{
+	position: relative; 
+	z-index: 1000; 
+	color: #333; 
+	font-size: 1.25em;
+} 
+.container .contactInfo .box .text 
+{
+	position: relative;  
+	display: flex; 
+	flex-direction: column; 
+	margin-left: 20px; 
+	font-size: 1.1em; 
+	color: #fff; 
+	font-family: 300;
+
+} 
+.container .contactInfo .box .text h3 
+{
+	font-weight: 500; 
+	color: crimson;
+} 
+.container .contactInfo .txt 
+{
+	color: #fff; 
+	margin-top: 50px; 
+	font-weight: 500; 
+	border-left: 50px solid crimson; 
+	padding-left: 10px; 
+	line-height: 1em;
+} 
+.container .contactInfo .sci 
+{
+	position: relative; 
+	display: flex; 
+	gap: 30px; 
+	margin: 20px 0;
+} 
+.container .contactInfo .sci li 
+{
+	list-style: none;
+} 
+.container .contactInfo .sci li a 
+{
+	color: #fff; 
+	font-size: 1.5em; 
+	transition: 0.25s;
+} 
+.container .contactInfo .sci li a:hover 
+{
+	color: crimson; 
+	filter: drop-shadow(0 0 5px crimson);
+} 
+.container .contactForm 
+{
+	position: relative; 
+	width: 40%; 
+	background: repeating-conic-gradient(from var(--a),crimson 0%,crimson 10%, transparent 10%,transparent 50%);  
+	animation: animate 6s linear infinite; 
+	padding: 60px;
+}  
+.container .contactForm::before 
+{
+	content: ''; 
+	position: absolute; 
+	inset: 0; 
+	background: repeating-conic-gradient(from var(--a),crimson 0%,crimson 10%, transparent 10%,transparent 50%);  
+	animation: animate 20s linear infinite;  
+	animation-delay: -1.5s;
+} 
+.container .contactForm::after 
+{
+	content: '';  
+	position: absolute; 
+	inset: 2px; 
+	border: 20px solid #222; 
+	background: #333;
+
+}
+@property --a 
+{
+	syntax: '<angle>'; 
+	inherits: false; 
+	initial-value: 0deg;
+} 
+@keyframes animate 
+{
+	0% 
+	{
+		--a:0deg; 
+	} 
+	100% 
+	{
+		--a:3600deg;
+	}
+} 
+.container .contactForm form 
+{
+	position: relative; 
+	z-index: 10;
+} 
+.container .contactForm form h2 
+{
+	font-size: 2em; 
+	color: #fff; 
+	font-weight: 500s;
+} 
+.container .contactForm form .inputBox 
+{
+	position: relative; 
+	width: 100%; 
+	margin-top: 20px;
+} 
+.container .contactForm form .inputBox input , 
+.container .contactForm form .inputBox textarea
+{
+	width: 100% !important; 
+	padding: 5px 0; 
+	font-size: 1.1em; 
+	margin: 10px 0; 
+	border: none; 
+	background: transparent; 
+	border-bottom: 2px solid crimson; 
+	color: #fff; 
+	outline: none; 
+	resize: none;
+} 
+.container .contactForm form .inputBox span 
+{
+	position: absolute; 
+	left: 0; 
+	pointer-events: none; 
+	padding: 5px 0; 
+	margin: 10px 0; 
+	font-size: 1.1em; 
+	color: #fff; 
+	transition: 0.5s;
+} 
+.container .contactForm form .inputBox input:focus ~ span , 
+.container .contactForm form .inputBox textarea:focus ~span , 
+.container .contactForm form .inputBox input:focus ~ span , 
+.container .contactForm form .inputBox textarea:focus ~span 
+{
+color: crimson; 
+font-size: 0.9em; 
+transform: translateY(-24px);
+} 
+.container .contactForm form .inputBox input[type="submit"] 
+{
+	width: 100%; 
+	background: crimson; 
+	color: #222; 
+	border: none; 
+	cursor: pointer; 
+	padding: 10px; 
+	font-size: 1.1em; 
+	font-weight: 500;
+} 
+/* Responsive Styles */
+@media (max-width: 991px) {
+	.contact {
+		padding: 50px;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	.container .contactInfo,
+	.container .contactForm {
+		width: 100%;
+	}
+
+	.container .contactForm {
+		padding: 40px;
+	}
+
+	.container .contactForm form {
+		padding: 30px;
+	}
+}
+
+
+
+ </style>
+
 </head>
 <body>
-	<nav th:replace="~{Navigation::navbar()}">	
-	</nav>
-	<div class="information">
-		<h3>Repacked & Packed By :</h3>
-		<h1>FoodFrenzy</h1>
-		<h4>RSN : XXX/1,E Ward,Xyz Mil,</h4>
-		<h4>Near Royal English School</h4>
-		<h4>Deoria,India.</h4>
-		
-	</div>
-	<div class="icons">
-		<h3><i class="fa-brands fa-square-instagram" style="color: white;"></i> :0.2anurag</h3>
-		<h3><i class="fa-solid fa-phone" style="color:white"></i> : +91-7234020314</h3>
-		<h3> <i class="fa-solid fa-envelope" style="color:white"></i>  : scanurag@gmail.com</h3>
-		
-	</div>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+<section class="contact"> 
+ <div class="content"> 
+ <h2>Contact Us</h2>  
+ <p>FoodFrenzy is a web-based application designed to revolutionize food industry management. With its intuitive interface, it streamlines operations by seamlessly managing customer data, inventory, and orders. This comprehensive solution ensures efficient decision-making and provides accessibility from any device, enhancing productivity in the dynamic food business landscape.
+</p>
+ </div> 
+ <div class="container"> 
+<div class="contactInfo"> 
+ <div class="box"> 
+<div class="icon"><b></b><i class="fa-sharp fa-solid fa-location-dot"></i></div> 
+<div class="text"> 
+ <h3>Address</h3> 
+ <p>A-142,Sector 92,<br>Noida,<br>22545521</p>
+ </div>
+  </div> 
+   <div class="box"> 
+<div class="icon"><b></b><i class="fa-solid fa-phone"></i></div> 
+<div class="text"> 
+ <h3>Phone</h3> 
+ <p>8299173654</p>
+ </div>
+  </div> 
+  <div class="box"> 
+<div class="icon"><b></b><i class="fa-solid fa-envelope"></i></div> 
+<div class="text"> 
+ <h3>Email</h3> 
+ <p>scanurag@gmail.com</p>
+ </div>
+  </div> 
+<div class="contactForm"> 
+ 
+<form> 
+ <h2>Send Message</h2> 
+ <div class="inputBox"> 
+<input type="text" name="" required="required"> 
+<span>Full Name</span>
+  </div> 
+ <div class="inputBox"> 
+<input type="text" name="" required="required"> 
+<span>Email</span>
+  </div> 
+   <div class="inputBox"> 
+<textarea required="required"></textarea>
+<span>Type your message...</span>
+  </div> 
+   <div class="inputBox"> 
+<input type="submit" value="Send"> 
+  </div>
+ </form>
+
+</div>
+<h2 class="txt">Connect with us</h2>
+<ul class="sci">  
+	<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li> 
+	<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li> 
+	<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li> 
+	<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+</ul>
+ </div>  
+ </div>
+ </section>
 </body>
 </html>

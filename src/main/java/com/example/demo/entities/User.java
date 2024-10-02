@@ -30,6 +30,9 @@ public class User
 	private List<Orders> orders;
 	
 	
+	public User() {
+
+}
 	public List<Orders> getOrders() {
 		return orders;
 	}
@@ -74,6 +77,9 @@ public class User
 	}
 	
 
-
+	 public User(String uemail, String upassword) {
+	        this.uemail = uemail;
+	        this.upassword = upassword;
+	    }
 
 }

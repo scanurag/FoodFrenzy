@@ -1,0 +1,309 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-shadow: border-box;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+}
+.container{
+	display: grid;
+	grid-template-columns: 250px 1fr 300px;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+.brand-logo{
+	padding: 0 30px;
+}
+.brand-logo img{
+	width: 150px;
+	height: 150px;
+	margin-top: 10px;
+	border-radius: 100px;
+}
+.menu-item a{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 8px 30px;
+	margin: 12px 0;
+	color: rgb(128, 129, 129);
+	font-weight: 300;
+}
+.menu-item a:hover{
+	background: rgb(250, 212, 218);
+	}
+#food-container{
+	background: whitesmoke;
+	overflow: scroll;
+	overflow-x: hidden;
+	box-sizing: content-box;
+}
+#header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+	background: whitesmoke;
+	z-index: 1;
+}
+
+#header .address{
+	font-size: 20px;
+}
+.your-address{
+	border: 1px solid indianred;
+	color: indianred;
+	padding: 5px 10px;
+	border-radius: 5px;
+	width: 150px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+.add-box i{
+	font-size: 20px;
+}
+.util i,.user i{
+	font-size: 18px;
+	margin: 0 16px;
+	border: 1px solid crimson;
+	padding: 8px 16px;
+	color: crimson;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.util i:hover, .user i:hover{
+	color: white;
+	background: crimson;
+}
+.food-items{
+	
+}
+#biryani,#chicken,#chinese,#north-india-food,#paneer,#vegetable{
+margin-top: 40px;
+}
+#paneer #item-card,#vegetable #item-card{
+	background: rgb(218, 253, 188);
+}
+#chinese #item-card,#north-india-food #item-card{
+	background:  #E3F9A6;
+}
+
+#item-card{
+	width: 180px;
+	height: 220px;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	border-radius: 5px;
+	background: #95B9C7;
+	cursor: pointer;
+	transition: 0.5s all ease-in-out;
+}
+#card-top{
+	display: flex;
+	margin: 5px 0;
+	justify-content: space-between;
+}
+#rating{
+	padding: 7px;
+	color: goldenrod;
+	background: black;
+	font-size: 14px;
+	border-radius: 14px;
+}
+.fa-heart-o{
+	padding: 6px;
+	background: white;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.toggle-heart{
+	background: red;
+	color: white;
+}
+#item-card img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: auto;
+	display: block;
+	margin-bottom: 15px;
+	transition: 0.3s LL ease-in-out;
+}
+#item-card img:hover{
+ transform: scale(1.3);
+}
+#item-name{
+	margin: 5px 0;
+	font-weight: 600;
+	color: darkslategray;
+	font-size: 18px;
+}
+#item-price{
+	margin: 0;
+	color: rgb(2, 27, 27);
+	font-weight: 500;
+	font-size: 18px;
+}
+#cart{
+	background: whitesmoke;
+	padding-right: 30px;
+	overflow-y: scroll;
+}
+#cart a{
+
+    text-decoration: none;
+    color: indianred; !important;
+    font-size: 1rem;
+
+}
+.taste-header{
+	padding: 40px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+	background: whitesmoke;
+}
+.item-menu{
+ 	margin: 0;
+ 	font-size: 30px;
+ 	margin-top: 40px;
+ 	color: indianred;
+ 	background: whitesmoke;
+}
+.border{
+	width: 80px;
+	height: 4px;
+	margin: 3px 0;
+	margin-bottom: 30px;
+	border-radius: 2px;
+	background: coral;
+}
+.list-card{
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: 0.3 all ease-in-out;
+}
+.list-card:hover{
+background: rgb(255, 216, 222);
+}
+.list-card img:hover{ 
+	transition: 0.5s all ease-in-out;
+	transform: scale(1.2);
+}
+.list-card img{
+	margin-left:5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.list-name{
+	font-size: 20px;
+	margin: 0 10px;
+	text-decoration: none;
+	text-transform: capitalize;
+	color: rgb(94, 43, 43);
+}
+#category-list{
+	
+}
+.cart-toggle{
+display: none;
+}
+#cart-page{
+	background: white;
+	margin: 40px 10px;
+	margin-right: 50px;
+	padding: 20px 30px;
+	padding-bottom: 30px;
+	position: revert;
+}
+#cart-title{
+	font-size: 35px;
+	margin: 0;
+	color: indianred;
+}
+#cart-page table{
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+#cart-page table thead td{
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+#m-total-amount{
+	display: none;
+}
+#cart-page table thead td{
+	padding: 10px 0;
+	font-size: 20px;
+}
+#cart-page table tbody button{
+	outline: none;
+	border: none;
+	font-size: 16px;
+	background: lightcoral;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	margin: 0 5px;
+	padding:3px 8px;
+
+}
+#cart-page table tbody img{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+}
+#checkout{
+	text-align: center;
+	margin: 40px auto;
+	border-radius: 5px;
+	background: white;
+	padding: 10px 20px;
+}
+#checkout p{
+	margin: 15px 0;
+	float: left;
+}
+#total-price,#total-item{
+	font-size: 25px;
+	color: indianred;
+}
+.cart-btn{
+	outline: none;
+	border: none;
+	background: crimson;
+	color: white;
+	padding:10px 25px;
+	border-radius: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+	bottom: 30px;
+	margin: 15px 0;
+	cursor: pointer;
+}
+.cart-btn:hover{
+	color: crimson;
+	background: none;
+	border: 1px solid crimson;
+}
+#delievery{
+	font-size: 20px;
+	color: limegreen;
+}
