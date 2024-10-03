@@ -34,7 +34,7 @@ public class AdminController {
 
 	private String email;
 	private User user;
-	@GetMapping("/adminLogin")
+	@PostMapping("/adminLogin")
 	public String  getAllData(  @ModelAttribute("adminLogin") AdminLogin login, Model model)
 	{
 		String email=login.getEmail();
@@ -50,7 +50,7 @@ public class AdminController {
 
 	}
 
-	@GetMapping("/userlogin")
+	@PostMapping("/userLogin")
 	public String userLogin( @ModelAttribute("userLogin") UserLogin login,Model model)
 	{
 
