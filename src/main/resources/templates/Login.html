@@ -1,6 +1,5 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<title>FoodFrenzy</title>
@@ -19,11 +18,10 @@
 				<strong style="font-size: 16px;margin-bottom: 0px;">BUSINESS</strong>
 				<h2>For <span style="color:green;">Admins</span></h2>
 
-				<form action="" th:action="@{/adminLogin}">
+				<form th:action="@{/adminLogin}" method="post">
 					<b>Email :</b>
 					<input type="email" name="email" placeholder="Enter email..." class="email"> <br />
-
-					<b> Password:</b>
+					<b>Password:</b>
 					<input type="password" name="password" placeholder="Enter password" class="password">
 					<small style="color: red;" th:text="${error}"></small><br />
 					<button type="submit" class="loginButton">Log in</button>
@@ -33,25 +31,17 @@
 		<div class="user">
 			<div class="content">
 				<h2> For <span style="color:green;">Users</span></h2>
-				<form action="" th:action="@{/userlogin}" class="form">
+				<form th:action="@{/userLogin}" method="post" class="form">
 					<b>Email :</b>
-					<input type="email" name="userEmail" placeholder="Enter email">
-					<!--		th:classappend="${#fields.hasErrors('userEmail')?'emailError':''}">-->
+					<input type="email" name="userEmail" placeholder="Enter email"><br />
 
-					<!--<div style="color: red;font-size: 16px;" class="emailError" th:each="e :${#fields.errors('userEmail')}" th:text="${e}">
-					</div>--> <br />
+					<b>Password:</b>
+					<input type="password" name="userPassword" placeholder="Enter password" required maxlength="8" minlength="4" class="userPassword"><br />
 
-
-					<b> Password:</b>
-					<input type="password" name="userPassword" placeholder="Enter password" required maxlength="8"
-						minlength="4" class="userPassword">
-					<!--th:classappend="${#fields.hasErrors('userPassword')?'passwordError':'userPassword'}">-->
-					<!--<div style="color: red;font-size: 16px;" class="passwordError" th:each="e :${#fields.errors('userPassword')}" th:text="${e}">
-					</div>-->
 					<small style="color: red;" th:text="${error2}"></small><br />
 					<button type="submit" class="loginButton">Log in</button><br>
 
-					<p>I don't have account ? <a href="register.html" style="color: green;">Register Here</a></p>
+					<p>I don't have an account? <a href="register.html" style="color: green;">Register Here</a></p>
 				</form>
 			</div>
 		</div>
