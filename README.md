@@ -64,6 +64,8 @@ Before running this project, ensure you have the following installed:
 Here is a preview of the FoodFrenzy interface:
 
 ![Screenshot 2024-10-02 124524](https://github.com/user-attachments/assets/adcc9e17-c8dc-4031-b3aa-0ea76a6d538d) 
+![image](https://github.com/user-attachments/assets/3d407958-efbe-449f-b4e1-5b08b9f8a28b)
+
 ![Screenshot 2024-08-24 194808](https://github.com/user-attachments/assets/36b70376-1d14-4ede-8118-4800f846f8f0) 
 ![Screenshot 2024-08-24 194958](https://github.com/user-attachments/assets/c11a4710-69f8-42fd-b9d7-2b5278b2c8a3) 
 ![Screenshot 2024-08-24 220831](https://github.com/user-attachments/assets/d3cd3cdd-cda5-460a-a253-24e45cf600b0)  
