@@ -7,7 +7,6 @@ services:
     ports:
       - "3306:3306"
     environment:
-      DATABASE_HOST: docker_mysql
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: FoodFrenzy
       MYSQL_USER: admin
@@ -15,7 +14,7 @@ services:
     networks:
       - sample-sb-mysql
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      test: ["CMD", "mysqladmin", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -38,4 +37,3 @@ services:
       - sample-sb-mysql
 networks:
   sample-sb-mysql:
-
