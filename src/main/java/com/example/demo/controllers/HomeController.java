@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entities.Product;
-import com.example.demo.loginCredentials.AdminLogin;
 import com.example.demo.loginCredentials.Login;
 import com.example.demo.services.ProductServices;
 
