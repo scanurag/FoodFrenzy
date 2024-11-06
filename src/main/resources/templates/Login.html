@@ -18,12 +18,13 @@
 				<strong style="font-size: 16px;margin-bottom: 0px;">BUSINESS</strong>
 				<h2>For <span style="color:green;">Admins</span></h2>
 
-				<form th:action="@{/adminLogin}" method="post">
+				<form th:action="@{/Login}" method="post">
 					<b>Email :</b>
 					<input type="email" name="email" placeholder="Enter email..." class="email"> <br />
 					<b>Password:</b>
 					<input type="password" name="password" placeholder="Enter password" class="password">
-					<small style="color: red;" th:text="${error}"></small><br />
+					<input type="hidden" name="role" value="admin" />
+					<small style="color: red;" th:text="${error_admin}"></small><br />
 					<button type="submit" class="loginButton">Log in</button>
 				</form>
 			</div>
@@ -31,14 +32,14 @@
 		<div class="user">
 			<div class="content">
 				<h2> For <span style="color:green;">Users</span></h2>
-				<form th:action="@{/userLogin}" method="post" class="form">
+				<form th:action="@{/Login}" method="post" class="form">
 					<b>Email :</b>
-					<input type="email" name="userEmail" placeholder="Enter email"><br />
+					<input type="email" name="email" placeholder="Enter email"><br />
 
 					<b>Password:</b>
-					<input type="password" name="userPassword" placeholder="Enter password" required maxlength="8" minlength="4" class="userPassword"><br />
-
-					<small style="color: red;" th:text="${error2}"></small><br />
+					<input type="password" name="password" placeholder="Enter password" required maxlength="8" minlength="4" class="userPassword"><br />
+					<input type="hidden" name="role" value="user" /> 
+					<small style="color: red;" th:text="${error_user}"></small><br />
 					<button type="submit" class="loginButton">Log in</button><br>
 
 					<p>I don't have an account? <a href="register.html" style="color: green;">Register Here</a></p>

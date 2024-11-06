@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entities.Product;
-import com.example.demo.loginCredentials.AdminLogin;
+import com.example.demo.loginCredentials.Login;
 import com.example.demo.services.ProductServices;
 
 @Controller
@@ -44,7 +44,7 @@ public class HomeController
 	@GetMapping("/login")
 	public String login(Model model)
 	{
-		model.addAttribute("adminLogin",new AdminLogin());
+		model.addAttribute("Login",new Login());
 		return "Login";
 	}
 }
