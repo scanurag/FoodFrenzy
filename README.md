@@ -72,9 +72,9 @@ Here is a preview of the FoodFrenzy interface:
 
 ![image](https://github.com/user-attachments/assets/3d407958-efbe-449f-b4e1-5b08b9f8a28b)
 
-![Screenshot 2024-08-24 194808](https://github.com/user-attachments/assets/36b70376-1d14-4ede-8118-4800f846f8f0) 
+
 ![Screenshot 2024-08-24 194958](https://github.com/user-attachments/assets/c11a4710-69f8-42fd-b9d7-2b5278b2c8a3) 
-![Screenshot 2025-05-19 143351](https://github.com/user-attachments/assets/fa1c7404-285f-4f2a-9c5e-b45951f1acef)
+
 
 ![Screenshot 2024-08-24 220831](https://github.com/user-attachments/assets/d3cd3cdd-cda5-460a-a253-24e45cf600b0)  
 ![Screenshot 2024-08-24 195054](https://github.com/user-attachments/assets/733afb94-a251-4a6d-86a4-3a124e8c3469)
