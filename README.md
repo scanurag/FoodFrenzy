@@ -31,7 +31,11 @@ Before running this project, ensure you have the following installed:
 - Eclipse or Spring Tool Suite (STS)
 
 ## Setup and Installation
+# 🎁 Donate
 
+<a href="https://buymeacoffee.com/1122anuragg">
+  <img src="https://user-images.githubusercontent.com/25067102/154570688-9e143f2b-fee3-4b05-a9d2-a7a3013b2b51.png" />
+<a/>
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-repository-url/FoodFrenzy.git
