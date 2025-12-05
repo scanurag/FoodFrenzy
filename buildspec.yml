@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Maven & Java versions"
+      - mvn -v || true
+      - java -version || true
+
+  build:
+    commands:
+      - echo "Building project..."
+      - mvn clean package -DskipTests
+
+  post_build:
+    commands:
+      - echo "Preparing artifact..."
+      - mkdir -p output
+      - cp target/*.jar output/ || true
+      - ls -l output || true
+
+artifacts:
+  files:
+    - output/*.jar
+    - appspec.yml
+    - scripts/**/*
