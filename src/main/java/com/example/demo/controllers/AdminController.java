@@ -32,45 +32,34 @@ public class AdminController {
 	@Autowired
 	private OrderServices orderServices;
 
-	private String email;
 	private User user;
-	@PostMapping("/adminLogin")
-	public String  getAllData(  @ModelAttribute("adminLogin") AdminLogin login, Model model)
-	{
-		String email=login.getEmail();
-		String password=login.getPassword();
-		if(adminServices.validateAdminCredentials(email, password))
-		{
+	private String email;
+	private String role;
+	private String password;
+
+	@PostMapping("/Login")
+	public String login( @ModelAttribute("login") Login login, Model model){
+		role = login.getRole();
+		email = login.getEmail();
+		password = login.getPassword();
+		if ("admin".equals(role) && adminServices.validateAdminCredentials(email, password)){
 			return "redirect:/admin/services";
-		}
-		else {
-			model.addAttribute("error", "Invalid email or password");
-			return "Login";
-		}
-
-	}
-
-	@PostMapping("/userLogin")
-	public String userLogin( @ModelAttribute("userLogin") UserLogin login,Model model)
-	{
-
-		email=login.getUserEmail();
-		String password=login.getUserPassword();
-		if(services.validateLoginCredentials(email, password))
-		{
+		}else if ("user".equals(role) && services.validateLoginCredentials(email, password)){
 			user = this.services.getUserByEmail(email);
 			List<Orders> orders = this.orderServices.getOrdersForUser(user);
 			model.addAttribute("orders", orders);
 			model.addAttribute("name", user.getUname());
 			return "BuyProduct";
-		}
-		else
-		{
-			model.addAttribute("error2", "Invalid email or password");
+		}else{
+			if ("admin".equals(role)) {
+				model.addAttribute("error_admin", "Invalid email or password");
+			} else {
+				model.addAttribute("error_user", "Invalid email or password");
+			}
 			return "Login";
 		}
-
 	}
+
 	@PostMapping("/product/search")
 	public String seachHandler(@RequestParam("productName") String name,Model model)
 	{
