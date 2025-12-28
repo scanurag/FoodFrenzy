@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysql_docker:
+    image: mysql:8
+    container_name: mysql_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: FoodFrenzy
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+    networks:
+      - sample-sb-mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  spring-boot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ak_spring_boot
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql_docker:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_docker:3306/FoodFrenzy?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - sample-sb-mysql
+networks:
+  sample-sb-mysql:
