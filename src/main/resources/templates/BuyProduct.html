@@ -1,15 +1,18 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Buy Product </title>
-	<link rel="stylesheet" href="" />
+	<title>Buy Product - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <style>
 	body {
 		background-image: url("https://images.pexels.com/photos/7219747/pexels-photo-7219747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-		 background-size: cover; 
+		background-size: cover; 
+		margin: 0;
+		padding: 0;
 	}
 
 	* {
@@ -17,113 +20,168 @@
 		font-family: sans-serif;
 	}
 
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+		padding: 15px 30px;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	.nav-btn {
+		border: 1px solid black;
+		background-color: darkgoldenrod;
+		color: white;
+		text-decoration: none;
+		padding: 8px 16px;
+		border-radius: 4px;
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	.nav-btn.logout {
+		background-color: #d9534f;
+	}
+
+	.nav-btn:hover {
+		opacity: 0.9;
+	}
+
 	.searchInput {
 		margin-top: 30px;
+		background: rgba(0, 0, 0, 0.65);
+		padding: 25px;
+		display: inline-block;
+		border-radius: 10px;
+		color: white;
 	}
 
 	.searchInput input {
-		padding: 15px;
+		padding: 12px;
 		width: 270px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
 	}
 
 	.searchInput button {
-		padding: 15px;
-		width: 100px;
-		background-color: red;
+		padding: 12px 20px;
+		background-color: #e63946;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-weight: bold;
 	}
 
 	.details {
-		margin-top: 70px;
+		margin-top: 30px;
+		background: rgba(0, 0, 0, 0.7);
+		padding: 25px;
+		display: inline-block;
+		border-radius: 10px;
+		color: white;
 	}
 
 	.details input,
 	.details button {
 		display: block;
-		padding: 5px;
+		padding: 8px;
 		font-size: 16px;
-		
-
+		margin: 8px auto;
+		border-radius: 4px;
+		border: 1px solid #ccc;
 	}
 
-	a {
-		border: 1px solid black;
-		background-color: darkgoldenrod;
-		color: black;
-		text-decoration: none;
-		padding: 7px;
-		width: 50px;
-		position: fixed;
+	.details button {
+		background-color: #2a9d8f;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+		padding: 10px 25px;
+		border: none;
 	}
-	.details th{
+
+	.details button:hover {
+		background-color: #21867a;
+	}
+
+	.details th {
 		background-color: dimgray;
 		font-family: sans-serif;
 		padding: 10px;
 		border: none;
-	
+		color: white;
 	}
-	td{
+
+	td {
 		text-align: center;
 		border-bottom: 1px solid lightslategrey;
+		padding: 8px 15px;
+		color: white;
 	}
-	.welcome marquee,.welcome span
-	{
-		
+
+	.welcome marquee, .welcome span {
 		width: 50%;
 		font-size: 20px;
 		font-family: sans-serif;
 		color: lavender;
 	}
-	
 </style>
 
 <body>
+	<div class="top-nav">
+		<div>
+			<a th:href="@{/products}" class="nav-btn"><i class="fa fa-arrow-left"></i> Products Menu</a>
+			<a th:href="@{/home}" class="nav-btn" style="margin-left: 10px;"><i class="fa fa-home"></i> Home</a>
+		</div>
+		<div>
+			<a th:href="@{/logout}" class="nav-btn logout"><i class="fa fa-sign-out"></i> Log Out</a>
+		</div>
+	</div>
+
 	<div class="welcome">
-			<marquee direction="right"  behaviour="slide" 
-			scrollamount="15" loop="1">Welcome Back <span  th:text="${name}"></span>
-			</marquee><br />
+		<marquee direction="right" scrollamount="15" loop="1">
+			Welcome Back <span th:text="${name != null ? name : (session.user != null ? session.user.uname : 'Valued Customer')}"></span>!
+		</marquee><br />
 	</div>
 	
-	<a href="/login">Back</a>
 	<center>
-
 		<form action="" th:action="@{/product/search}" method="post" class="searchInput">
-			<h1>Product Search :</h1>
-			<input type="text" name="productName" required placeholder="Please enter the Product Name....">
+			<h1 style="margin-top: 0;">Product Search :</h1>
+			<input type="text" name="productName" required placeholder="Enter product name (e.g. Chicken Biryani)...">
 			<button type="submit">SEARCH</button><br />
-			<smal style="color: red;" th:text="${message}"> </smal>
+			<small style="color: #ff6b6b; font-weight: bold; display: block; margin-top: 10px;" th:text="${message}"></small>
 		</form>
 		
 		<div th:if="${product!=null}" class="details">
+			<h2 style="color: #48cae4; margin-top: 0;">Order Details</h2>
 			<form action="" th:action="@{/product/order}" th:object="${product}" method="post">
-				ProductName :
-				<input type="text" value="" name="oName" th:value="${product.pname}" readonly /><br />
-				Product Price :
-				<input type="text" value="" name="oPrice" th:value="${product.pprice}" readonly /><br />
-				Quqntity :
-				<input type="number" placeholder="Minimun: 1KG" min="1" name="oQuantity" /><br />
+				<label>Product Name:</label>
+				<input type="text" name="oName" th:value="${product.pname}" readonly /><br />
+				<label>Product Price (Rs):</label>
+				<input type="text" name="oPrice" th:value="${product.pprice}" readonly /><br />
+				<label>Quantity (KG / Plates):</label>
+				<input type="number" placeholder="Minimum: 1" min="1" value="1" name="oQuantity" required /><br />
 
-				<button type="submit">Order_Now</button>
+				<button type="submit">Order Now</button>
 			</form>
 		</div>
 		
-		<div th:if="${orders!=null}" class="details">
-			<h2>Your Orders :</h2>
-			<table >
+		<div th:if="${orders!=null and !orders.isEmpty()}" class="details" style="display: block; max-width: 80%; margin: 30px auto;">
+			<h2>Your Orders History :</h2>
+			<table style="width: 100%; border-collapse: collapse;">
 				<tr>
-	
-					<th>Product_Name</th>
-					<th>Product_Price</th>
-					<th>Product_Quantity</th>
-					<th>Total_Ammount</th>
+					<th>Product Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Total Amount</th>
 					<th>Date</th>
 				</tr>
 				<tr th:each="order :${orders}">
 					<td th:text="${order.oName}"></td>
-					<td th:text="${order.oPrice}"></td>
+					<td th:text="'Rs ' + ${order.oPrice}"></td>
 					<td th:text="${order.oQuantity}"></td>
-					<td th:text="${order.totalAmmout}"></td>
+					<td th:text="'Rs ' + ${order.totalAmmout}"></td>
 					<td th:text="${order.orderDate}"></td>
-
 				</tr>
 			</table>
 		</div>

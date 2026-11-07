@@ -2,25 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" href="" th:href="@{/css/Update_Admin.css}" />
+	<title>Update Admin - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" th:href="@{/css/Update_Admin.css}" />
 </head>
 <body>
-		<a href="/services">Back to Services</a>
+	<a th:href="@{/admin/services}">Back to Services</a>
 	<div class="updateAdmin">
-				<h3 style="color: red;">UPDATE EXISTING ADMIN / PARTNER DETAILS</h3>
-		<form action="" th:action="@{'/updatingAdmin/'+${admin.adminId}}" th:object="${admin}">
+		<h3 style="color: red;">UPDATE EXISTING ADMIN / PARTNER DETAILS</h3>
+		<form action="" th:action="@{'/updatingAdmin/'+${admin.adminId}}" th:object="${admin}" method="post">
 			Admin_Id :
-			<input type="hidden" name="adminId" th:value="${admin.adminId}" th:text="${admin.adminId}"/><br />
+			<input type="hidden" name="adminId" th:value="${admin.adminId}"/><br />
+			<input type="hidden" name="adminPassword" th:value="${admin.adminPassword}" />
 			Admin_Name :
-			<input type="text"  name="adminName"    th:value="${admin.adminName}"/><br />
+			<input type="text" name="adminName" th:value="${admin.adminName}" required /><br />
 			Admin_Number :
-			<input type="tel"  name="adminNumber" th:value="${admin.adminNumber}" pattern="[0-9]{10}"/> <br />
+			<input type="tel" name="adminNumber" th:value="${admin.adminNumber}" pattern="[0-9]{10}" required /> <br />
 			Admin_Email :
-			<input type="email" name="adminEmail" th:value="${admin.adminEmail}" /> <br />
+			<input type="email" name="adminEmail" th:value="${admin.adminEmail}" required /> <br />
 			
 			<button type="submit">Update_Admin</button>
-			
 		</form>
 	</div>
 </body>

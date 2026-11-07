@@ -3,27 +3,24 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" href="" th:href="@{/css/Update_Product.css}" />
+	<title>Update Product - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" th:href="@{/css/Update_Product.css}" />
 </head>
 
 <body>
-		<a href="/services">Back_To_Services</a>
+	<a th:href="@{/admin/services}">Back to Services</a>
 	<div class="updateProduct">
 		<h3 style="font-weight: bolder;color: seagreen;">UPDATE EXISTING PRODUCT :</h3>
-		<form action="" th:action="@{'/updatingProduct/'+${product.pid}}" th:object="${product}">
-			Product_Id:
-			<input type="hidden" th:text="${product.pid}" th:value="${product.pid}" /><br />
+		<form action="" th:action="@{'/updatingProduct/'+${product.pid}}" th:object="${product}" method="post">
+			<input type="hidden" name="pid" th:value="${product.pid}" /><br />
 			Product_Name :
-			<input type="text" name="pname" th:value="${product.pname}" /> <br />
+			<input type="text" name="pname" th:value="${product.pname}" required /> <br />
 			Product_Price :
-			<input type="text" name="pprice" th:value="${product.pprice}" /><br />
+			<input type="number" step="0.01" name="pprice" th:value="${product.pprice}" required /><br />
 			Product_Desc : <br />
-			<textarea name="pdescription" th:value="${product.pdescription}" id="" cols="10" rows="1">
-
-	</textarea><br />
+			<textarea name="pdescription" th:text="${product.pdescription}" cols="25" rows="3" placeholder="Enter Product Description.."></textarea><br />
 			<button type="submit">Update_Product</button>
-
 		</form>
 	</div>
 </body>

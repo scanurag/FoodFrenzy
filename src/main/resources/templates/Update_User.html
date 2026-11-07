@@ -2,24 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Admin : Update</title>
-		<link rel="stylesheet" href="" th:href="@{/css/Update_User.css}" />
+	<title>Update User - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" th:href="@{/css/Update_User.css}" />
 </head>
 <body>
-	<a href="/services"> Back to Services</a>
+	<a th:href="@{/admin/services}">Back to Services</a>
 	<div class="updateUser">
 		<h3 style="color: red;"> UPDATE EXISTING USER/CUSTOMER </h3>
-		<form  action=""  th:action="@{'/updatingUser/'+${user.u_id}}"    th:object="${user}">
+		<form action="" th:action="@{'/updatingUser/'+${user.u_id}}" th:object="${user}" method="post">
 			User_Id :
-			<input  type="hidden" name="uid" th:value="${user.u_id}" th:text="${user.u_id}"/><br />
+			<input type="hidden" name="u_id" th:value="${user.u_id}"/><br />
+			<input type="hidden" name="upassword" th:value="${user.upassword}" />
 			User_Name :
-			<input type="text" name="uname" th:value="${user.uname}"/>
-			User_Emai :
-			<input type="email" name="uemail" th:value="${user.uemail}"  />
+			<input type="text" name="uname" th:value="${user.uname}" required />
+			User_Email :
+			<input type="email" name="uemail" th:value="${user.uemail}" required />
 			User_Number :
-			<input type="tel" name="unumber" th:value="${user.unumber}" pattern="[0-9]{10}"/>
+			<input type="tel" name="unumber" th:value="${user.unumber}" pattern="[0-9]{10}" required />
 			
-		<button type="submit">Update_User</button>
+			<button type="submit">Update_User</button>
 		</form>
 	</div>
 </body>

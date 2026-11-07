@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Error</title>
+	<title>Error - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
 	<style>
 		.mainContainer {
 			position: relative;
@@ -25,9 +26,10 @@
 			position: relative;
 			top: 30px;
 			background-color: darkslategray;
-			padding: 3px;
+			padding: 5px 15px;
 			color: white;
 			text-decoration: none;
+			border-radius: 4px;
 		}
 
 		img {
@@ -40,16 +42,15 @@
 	<center>
 		<div class="mainContainer">
 			<div class="image">
-				<img src="/Images/repairImage.jpg" alt="ErrorLogo" />
+				<img th:src="@{/Images/repairImage.jpg}" alt="ErrorLogo" />
 			</div>
 			<div class="container">
 				<h1>Ooops...Sorry..!!!</h1>
 				<h3>Something went Wrong....!</h3>
-				<small>Exception has Occured....!!!</small><br>
-				<small style="color: red;">1. May be you are trying to add null data which is not valid. <br /> OR <br />2 . Email is already registered..</small>
+				<small>An unexpected error has occurred.</small><br>
+				<small style="color: red;">Please check your input or try again.</small>
 				<br />
-				<a href="/services">Back</a>
-				<a href="http://www.google.com" target="_blank">Help</a>
+				<a th:href="@{/home}">Back to Home</a>
 			</div>
 		</div>
 	</center>
