@@ -44,7 +44,7 @@ public class AdminController {
 			return "redirect:/admin/services";
 		}
 		else {
-			model.addAttribute("error", "Invalid email or passwordd");
+			model.addAttribute("error", "Invalid email or password");
 			return "Login";
 		}
 

@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>FoodFrenzy</title>
-	<link rel="icon" type="image/x-icon" href="./img/b.png">
+	<title>FoodFrenzy - Login</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
-	<link rel="stylesheet" href="" th:href="@{/css/Login.css}" />
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Login.css}" />
 </head>
 
 <body>
@@ -36,12 +36,15 @@
 					<input type="email" name="userEmail" placeholder="Enter email"><br />
 
 					<b>Password:</b>
-					<input type="password" name="userPassword" placeholder="Enter password" required maxlength="8" minlength="4" class="userPassword"><br />
+					<input type="password" name="userPassword" placeholder="Enter password" required maxlength="30" minlength="4" class="userPassword"><br />
 
-					<small style="color: red;" th:text="${error2}"></small><br />
+					<small style="color: red;" th:text="${error2}"></small>
+					<small style="color: green; font-weight: bold; display: block; margin-top: 5px; margin-bottom: 5px;" th:if="${param.registered}">
+						<i class="fa-solid fa-circle-check"></i> Registration successful! Please log in.
+					</small><br />
 					<button type="submit" class="loginButton">Log in</button><br>
 
-					<p>I don't have an account? <a href="register.html" style="color: green;">Register Here</a></p>
+					<p>Don't have an account? <a th:href="@{/register}" style="color: green; font-weight: bold;">Register Here</a></p>
 				</form>
 			</div>
 		</div>
