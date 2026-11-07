@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home : Pavan Tea</title>
-    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}">
-    <link rel="stylesheet" href="" th:href="@{/css/Home.css}">
+    <title>FoodFrenzy</title>
+    <link rel="stylesheet" th:href="@{/css/Navigation.css}">
+    <link rel="stylesheet" th:href="@{/css/Home.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <nav th:fragment="navbar()">
-        <img th:src="@{/Images/logo.png}" alt="Logo" class="logo">
+        <a th:href="@{/home}"><img th:src="@{/Images/logo.png}" alt="Logo" class="logo"></a>
         <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/location">Locate Us</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/login">Log In <i class="fa-duotone fa-arrow-left-to-arc"></i></a></li>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/products}">Products</a></li>
+            <li><a th:href="@{/location}">Locate Us</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li th:if="${session.user != null}"><a th:href="@{/buyProduct}">My Orders</a></li>
+            <li th:if="${session.user != null}"><a th:href="@{/logout}">Log Out (<span th:text="${session.user.uname}"></span>)</a></li>
+            <li th:if="${session.admin != null and session.user == null}"><a th:href="@{/admin/services}">Dashboard</a></li>
+            <li th:if="${session.admin != null and session.user == null}"><a th:href="@{/logout}">Log Out</a></li>
+            <li th:if="${session.user == null and session.admin == null}"><a th:href="@{/login}">Log In <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
         </ul>
     </nav>
 </body>
 </html>
-
-

@@ -83,8 +83,13 @@ public class UserController {
 
 	@PostMapping("/addingUser")
 	public String addUser(@ModelAttribute User user) {
-		System.out.println(user);
 		this.services.addUser(user);
+		return "redirect:/admin/services";
+	}
+
+	@PostMapping("/updatingUser/{id}")
+	public String updateUserPost(@ModelAttribute User user, @PathVariable("id") int id) {
+		this.services.updateUser(user, id);
 		return "redirect:/admin/services";
 	}
 
@@ -99,5 +104,4 @@ public class UserController {
 		this.services.deleteUser(id);
 		return "redirect:/admin/services";
 	}
-
 }

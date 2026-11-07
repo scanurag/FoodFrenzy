@@ -3,14 +3,15 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>ADMIN PAGE :</title>
+	<title>Admin Dashboard - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<link rel="stylesheet" href="" th:href="@{/css/Admin_page.css}" />
-
+	<link rel="stylesheet" th:href="@{/css/Admin_page.css}" />
 </head>
 
 <body>
-	<a class="back" href="/login">Back</a>
+	<a class="back" th:href="@{/logout}">Log Out</a>
+	<a class="back" style="left: 100px; background-color: #2a9d8f;" th:href="@{/home}">Home</a>
 	<center>
 		<section class="tables">
 			<div class="admins">
@@ -89,25 +90,24 @@
 			
 			<div class="details">
 				<h2>Orders :</h2>
-			<table >
+			<table>
 				<tr>
 					<th>User_Name</th>
 					<th>User_Email</th>
 					<th>Product_Name</th>
 					<th>Product_Price</th>
 					<th>Product_Quantity</th>
-					<th>Total_Ammount</th>
+					<th>Total_Amount</th>
 					<th>Date</th>
 				</tr>
 				<tr th:each="order :${orders}">
-					<td th:text="${order.user.uname}"></td>
-					<td th:text="${order.user.uemail}"></td>
+					<td th:text="${order.user != null ? order.user.uname : 'Guest'}"></td>
+					<td th:text="${order.user != null ? order.user.uemail : 'N/A'}"></td>
 					<td th:text="${order.oName}"></td>
 					<td th:text="${order.oPrice}"></td>
 					<td th:text="${order.oQuantity}"></td>
 					<td th:text="${order.totalAmmout}"></td>
 					<td th:text="${order.orderDate}"></td>
-
 				</tr>
 			</table>
 		</div>

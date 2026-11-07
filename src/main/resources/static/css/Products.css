@@ -116,7 +116,7 @@ body {
     margin-bottom: 10px;
 }
 
-#buy {
+.buy-btn, #buy {
     display: inline-block;
     padding: 10px 20px;
     background-color: crimson;
@@ -124,9 +124,10 @@ body {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
-#buy:hover {
+.buy-btn:hover, #buy:hover {
     background-color: #218838;
 }
 
@@ -145,4 +146,3 @@ body {
         font-size: 1.5rem;
     }
 }
-

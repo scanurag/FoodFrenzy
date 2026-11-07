@@ -1,47 +1,56 @@
 <!doctype html>
-<html lang="en" xmnls:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Order Success - FoodFrenzy</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
 </head>
 <style>
-	body{
-		background-color:navajowhite;
+	body {
+		background-color: navajowhite;
 		font-family: cursive;
 		font-size: 30px;
-		
+		margin: 0;
+		padding: 20px;
 	}
-	.text{
-		position: relative;
-		left: 250px;
-		top: 200px;
+	.nav-links {
+		display: flex;
+		gap: 15px;
+	}
+	.text {
+		margin: 100px auto;
 		text-align: center;
 		height: max-content;
 		width: max-content;
 	}
-	span,h4
-	{
+	span, h4 {
 		color: green;
 	}
-	a{
+	a {
 		border: 1px solid black;
 		text-decoration: none;
 		background-color: darkgreen;
 		color: aliceblue;
 		font-family: sans-serif;
-		padding: 5px;
+		padding: 8px 16px;
+		font-size: 16px;
+		border-radius: 4px;
 	}
-	
+	a:hover {
+		background-color: forestgreen;
+	}
 </style>
 
 <body>
-		<a href="/product/back" >Back</a>
+	<div class="nav-links">
+		<a th:href="@{/product/back}">View My Orders</a>
+		<a th:href="@{/products}">Browse More Items</a>
+	</div>
 	<div class="text">
-		<h4>Ordered SuccessFully... !!!</h4>
+		<h4>Ordered Successfully... !!!</h4>
 		<h3 style="font-family: sans-serif;">Your purchased amount is : <span th:text="'₹ '+${amount}+'/-'"></span></h3>
 	</div>
-
 </body>
 
 </html>
